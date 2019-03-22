@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let col of cols">
+        {{ col.title }}
+      </th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let col of cols">
+        {{ row[col.key] }}
+      </td>
+      <td>
+        <div class="btn-group">
+          <button class="btn btn-info" (click)="updateRow(row)">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger" (click)="deleteRow(row)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

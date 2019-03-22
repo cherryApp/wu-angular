@@ -1,0 +1,6 @@
+<app-data-table 
+  [rows]="drivers" 
+  [cols]="columns" 
+  (onUpdate)="updateItem($event)"
+  (onDelete)="deleteItem($event)"  >
+</app-data-table>
