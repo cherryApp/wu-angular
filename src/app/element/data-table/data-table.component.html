@@ -10,7 +10,14 @@
   <tbody>
     <tr *ngFor="let row of rows">
       <td *ngFor="let col of cols">
-        {{ row[col.key] }}
+        <span *ngIf="col.type == 'plain'">
+          {{ row[col.key] }}
+        </span>
+        <input 
+          *ngIf="col.type != 'plain'" 
+          [(ngModel)]="row[col.key]" 
+          [type]="col.type" 
+          class="form-control">
       </td>
       <td>
         <div class="btn-group">

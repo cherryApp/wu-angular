@@ -1,24 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Routes } from '@angular/router';
-import { HomeComponent } from '../page/home/home.component';
-import { FuelingComponent } from '../page/fueling/fueling.component';
-import { VehicleComponent } from '../page/vehicle/vehicle.component';
-import { DriverComponent } from '../page/driver/driver.component';
+import { Column } from '../model/column';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
   appName: string = "Fleet Manager";
+  http: any = {
+    server: 'http://localhost:3000/'
+  };
+
+  columns: { [key: string]: Column[] } = {
+    driver: [
+      {key: 'id', title: '#', type: 'plain'},
+      {key: 'name', title: 'Name', type: 'text'},
+      {key: 'email', title: 'Email', type: 'email'}
+    ],
+    vehicle: [
+      {key: 'id', title: '#', type: 'plain'},
+      {key: 'lp', title: 'Lp.', type: 'text'},
+      {key: 'manufacturer', title: 'Man.', type: 'text'},
+      {key: 'engine', title: 'Man.', type: 'text'},
+      {key: 'consumption', title: 'Cons.', type: 'number'},
+      {key: 'year', title: 'Cons.', type: 'number'}
+    ],
+    fueling: [
+      {key: 'id', title: '#', type: 'plain'},
+      {key: 'date', title: 'Date', type: 'date'},
+      {key: 'driver', title: 'Driver', type: 'text'},
+      {key: 'vehicle', title: 'Vehicle', type: 'text'},
+      {key: 'amount', title: 'Amount', type: 'number'}
+    ]
+  };
 
   constructor() { }
 }
-
-export const AppRouting: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'fueling', component: FuelingComponent },
-  { path: 'vehicle', component: VehicleComponent },
-  { path: 'driver', component: DriverComponent },
-  { path: 'driver/update/:id', component: DriverComponent },
-  { path: '**', redirectTo: '' }
-];

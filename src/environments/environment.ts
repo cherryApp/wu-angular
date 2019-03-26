@@ -2,6 +2,12 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { Routes } from '@angular/router';
+import { HomeComponent } from '../app/page/home/home.component';
+import { FuelingComponent } from '../app/page/fueling/fueling.component';
+import { VehicleComponent } from '../app/page/vehicle/vehicle.component';
+import { DriverComponent } from 'src/app/page/driver/driver.component';
+
 export const environment = {
   production: false
 };

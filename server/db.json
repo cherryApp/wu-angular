@@ -1,0 +1,33 @@
+{
+  "driver": [
+    {
+      "id": 1,
+      "name": "Charlie Filpo",
+      "email": "cf@cf.org"
+    },
+    {
+      "id": 2,
+      "name": "Joe Filpo",
+      "email": "jf@jf.org"
+    }
+  ],
+  "vehicle": [
+    {
+      "id": 1,
+      "manufacturer": "Volvo",
+      "engine": "diesel",
+      "consumption": 8,
+      "year": "2015",
+      "lp": "GTR-321"
+    }
+  ],
+  "fueling": [
+    {
+      "id": 1,
+      "date": "2019-04-02",
+      "driver": 1,
+      "vehicle": 1,
+      "amount": 22
+    }
+  ]
+}

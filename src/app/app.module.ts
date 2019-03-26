@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-import { AppRouting } from './service/config.service';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -12,6 +13,14 @@ import { VehicleComponent } from './page/vehicle/vehicle.component';
 import { DriverComponent } from './page/driver/driver.component';
 import { DataTableComponent } from './element/data-table/data-table.component';
 import { RowEditorComponent } from './row-editor/row-editor.component';
+
+const appRouting: Routes =   [
+  { path: '', component: HomeComponent, data: {animation: 'HomePage'} },
+  { path: 'fueling', component: FuelingComponent, data: {animation: 'FilterPage'} },
+  { path: 'vehicle', component: VehicleComponent, data: {animation: 'AboutPage'} },
+  { path: 'driver', component: DriverComponent, data: {animation: 'FilterPage'} },
+  { path: '**', redirectTo: '', data: {animation: 'HomePage'} }
+]
 
 @NgModule({
   declarations: [
@@ -26,7 +35,10 @@ import { RowEditorComponent } from './row-editor/row-editor.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRouting)
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(appRouting)
   ],
   providers: [],
   bootstrap: [AppComponent]

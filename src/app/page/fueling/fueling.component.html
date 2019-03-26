@@ -1,3 +1,7 @@
-<p>
-  fueling works!
-</p>
+<app-data-table 
+  *ngIf="!selectedRow" 
+  [rows]="list" 
+  [cols]="columns" 
+  (onUpdate)="updateItem($event)"
+  (onDelete)="deleteItem($event)"  >
+</app-data-table>
