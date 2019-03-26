@@ -1,6 +1,12 @@
 <app-data-table 
+  *ngIf="!selectedRow" 
   [rows]="drivers" 
   [cols]="columns" 
   (onUpdate)="updateItem($event)"
   (onDelete)="deleteItem($event)"  >
 </app-data-table>
+<app-row-editor 
+  *ngIf="selectedRow" 
+  [cols]="columns" 
+  [row]="selectedRow">
+</app-row-editor>

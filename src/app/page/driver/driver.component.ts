@@ -21,6 +21,8 @@ export class DriverComponent implements OnInit {
     {key: 'email', title: 'Email'}
   ];
 
+  selectedRow: any = null;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class DriverComponent implements OnInit {
 
   updateItem(row: any): void {
     console.log(row);
-    this.router.navigateByUrl(`/driver/update/${row.id}`);
+    this.selectedRow = row;
   }
   
   deleteItem(row: any): void {

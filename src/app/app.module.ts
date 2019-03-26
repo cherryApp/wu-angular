@@ -11,6 +11,7 @@ import { FuelingComponent } from './page/fueling/fueling.component';
 import { VehicleComponent } from './page/vehicle/vehicle.component';
 import { DriverComponent } from './page/driver/driver.component';
 import { DataTableComponent } from './element/data-table/data-table.component';
+import { RowEditorComponent } from './row-editor/row-editor.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DataTableComponent } from './element/data-table/data-table.component';
     FuelingComponent,
     VehicleComponent,
     DriverComponent,
-    DataTableComponent
+    DataTableComponent,
+    RowEditorComponent
   ],
   imports: [
     BrowserModule,
