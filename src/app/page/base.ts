@@ -35,6 +35,10 @@ export class Base implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  createItem(row: any): void {
+    this.baseService.create(this.entityName, row);
+  }
+
   updateItem(row: any): void {
     this.baseService.update(this.entityName, row);
   }

@@ -45,4 +45,15 @@ export class BaseService {
         err => console.error(err)
       );
   }
+  
+  create(entityName: string, row: any): void {
+    this.http.post(
+      `${this.config.http.server}${entityName}`,
+      row
+    ).toPromise()
+      .then( 
+        () => this.getAll(entityName),
+        err => console.error(err)
+      );
+  }
 }

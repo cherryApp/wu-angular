@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './page/home/home.component';
@@ -38,6 +40,7 @@ const appRouting: Routes =   [
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    Ng2GoogleChartsModule,
     RouterModule.forRoot(appRouting)
   ],
   providers: [],

@@ -3,5 +3,6 @@
   [rows]="list" 
   [cols]="columns" 
   (onUpdate)="updateItem($event)"
-  (onDelete)="deleteItem($event)"  >
+  (onDelete)="deleteItem($event)" 
+  (onCreate)="createItem($event)">
 </app-data-table>

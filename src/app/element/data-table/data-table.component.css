@@ -1,0 +1,9 @@
+.table-striped.data-table {
+    box-shadow: 0 0 3px;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.table-striped.data-table .new-item-row {
+    background-color: rgb(121, 183, 238);
+}

@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Joe Filpo",
       "email": "jf@jf.org"
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "id": 3
     }
   ],
   "vehicle": [
@@ -19,6 +24,14 @@
       "consumption": 8,
       "year": "2015",
       "lp": "GTR-321"
+    },
+    {
+      "lp": "RGO-554",
+      "manufacturer": "VW",
+      "engine": "gasoline",
+      "consumption": "9",
+      "year": "2012",
+      "id": 2
     }
   ],
   "fueling": [
@@ -28,6 +41,13 @@
       "driver": 1,
       "vehicle": 1,
       "amount": 22
+    },
+    {
+      "date": "2019-03-01",
+      "driver": "1",
+      "vehicle": "1",
+      "amount": "20",
+      "id": 2
     }
   ]
 }

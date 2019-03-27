@@ -22,7 +22,7 @@ export class ConfigService {
       {key: 'manufacturer', title: 'Man.', type: 'text'},
       {key: 'engine', title: 'Man.', type: 'text'},
       {key: 'consumption', title: 'Cons.', type: 'number'},
-      {key: 'year', title: 'Cons.', type: 'number'}
+      {key: 'year', title: 'Year', type: 'number'}
     ],
     fueling: [
       {key: 'id', title: '#', type: 'plain'},

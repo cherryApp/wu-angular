@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped data-table">
   <thead>
     <tr>
       <th *ngFor="let col of cols">
@@ -8,6 +8,28 @@
     </tr>
   </thead>
   <tbody>
+    <!-- Row for creating new data. -->
+    <tr class="new-item-row">
+        <td *ngFor="let col of cols">
+          <span *ngIf="col.type == 'plain'">
+            {{ newRow[col.key] }}
+          </span>
+          <input 
+            *ngIf="col.type != 'plain'" 
+            [(ngModel)]="newRow[col.key]" 
+            [type]="col.type" 
+            class="form-control">
+        </td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-success" (click)="createRow(newRow)">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </td>
+    </tr>
+
+    <!-- Rows for showing data. -->
     <tr *ngFor="let row of rows">
       <td *ngFor="let col of cols">
         <span *ngIf="col.type == 'plain'">
