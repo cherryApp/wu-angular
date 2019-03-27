@@ -13,7 +13,7 @@ export class FuelingComponent extends Base {
   constructor(
     public config: ConfigService,
     public baseService: BaseService) {
-      super(config, baseService, 'fueling');
+      super(config, baseService, 'fuelings');
     }
 
 }

@@ -16,7 +16,7 @@ export class DriverComponent extends Base {
   constructor(
     public config: ConfigService,
     public baseService: BaseService) {
-      super(config, baseService, 'driver');
+      super(config, baseService, 'drivers');
     }
 
 }

@@ -30,6 +30,7 @@ export class DataTableComponent implements OnInit {
 
   createRow(row: any): void {
     this.onCreate.emit(row);
+    this.newRow = {};
   }
 
 }

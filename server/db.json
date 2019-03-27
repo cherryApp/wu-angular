@@ -1,5 +1,5 @@
 {
-  "driver": [
+  "drivers": [
     {
       "id": 1,
       "name": "Charlie Filpo",
@@ -11,12 +11,12 @@
       "email": "jf@jf.org"
     },
     {
-      "name": "John Doe",
+      "name": "Cserkó Lídia",
       "email": "john.doe@gmail.com",
       "id": 3
     }
   ],
-  "vehicle": [
+  "vehicles": [
     {
       "id": 1,
       "manufacturer": "Volvo",
@@ -34,20 +34,72 @@
       "id": 2
     }
   ],
-  "fueling": [
+  "fuelings": [
     {
       "id": 1,
       "date": "2019-04-02",
-      "driver": 1,
-      "vehicle": 1,
+      "driverId": "1",
+      "vehicleId": "2",
       "amount": 22
     },
     {
       "date": "2019-03-01",
-      "driver": "1",
-      "vehicle": "1",
-      "amount": "20",
+      "driverId": 1,
+      "vehicleId": "1",
+      "amount": 20,
       "id": 2
+    },
+    {
+      "date": "2019-03-14",
+      "driverId": "2",
+      "vehicleId": "1",
+      "amount": "30",
+      "id": 3
+    },
+    {
+      "date": "2019-03-19",
+      "driverId": "2",
+      "vehicleId": "2",
+      "amount": "40",
+      "id": 4
+    },
+    {
+      "date": "2019-03-31",
+      "driverId": "2",
+      "vehicleId": "1",
+      "amount": "50",
+      "id": 5
+    },
+    {
+      "date": "2019-03-11",
+      "driverId": "1",
+      "vehicleId": "1",
+      "amount": "33",
+      "id": 6
+    },
+    {
+      "date": "2019-03-29",
+      "driverId": "3",
+      "vehicleId": "1",
+      "amount": "75",
+      "id": 7
     }
-  ]
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

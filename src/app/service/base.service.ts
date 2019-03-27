@@ -15,6 +15,10 @@ export class BaseService {
     private http: HttpClient,
     private config: ConfigService) { }
 
+  customQuery(query: string): Promise<any> {
+    return this.http.get(`${this.config.http.server}${query}`).toPromise();
+  }
+
   getAll(entityName: string): Observable<any> {
     if (!this.entities[entityName]) {
       this.entities[entityName] = new Subject();

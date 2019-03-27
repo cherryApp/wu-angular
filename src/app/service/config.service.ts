@@ -11,12 +11,12 @@ export class ConfigService {
   };
 
   columns: { [key: string]: Column[] } = {
-    driver: [
+    drivers: [
       {key: 'id', title: '#', type: 'plain'},
       {key: 'name', title: 'Name', type: 'text'},
       {key: 'email', title: 'Email', type: 'email'}
     ],
-    vehicle: [
+    vehicles: [
       {key: 'id', title: '#', type: 'plain'},
       {key: 'lp', title: 'Lp.', type: 'text'},
       {key: 'manufacturer', title: 'Man.', type: 'text'},
@@ -24,11 +24,11 @@ export class ConfigService {
       {key: 'consumption', title: 'Cons.', type: 'number'},
       {key: 'year', title: 'Year', type: 'number'}
     ],
-    fueling: [
+    fuelings: [
       {key: 'id', title: '#', type: 'plain'},
       {key: 'date', title: 'Date', type: 'date'},
-      {key: 'driver', title: 'Driver', type: 'text'},
-      {key: 'vehicle', title: 'Vehicle', type: 'text'},
+      {key: 'driverId', title: 'Driver', type: 'text'},
+      {key: 'vehicleId', title: 'Vehicle', type: 'text'},
       {key: 'amount', title: 'Amount', type: 'number'}
     ]
   };

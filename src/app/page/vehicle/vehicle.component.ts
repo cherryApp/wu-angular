@@ -15,7 +15,7 @@ export class VehicleComponent extends Base {
   constructor(
     public config: ConfigService,
     public baseService: BaseService) {
-      super(config, baseService, 'vehicle');
+      super(config, baseService, 'vehicles');
     }
 
 }
