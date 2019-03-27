@@ -99,7 +99,6 @@ export class HomeComponent implements OnInit, OnDestroy{
   }
 
   initChart(data: any[]): void {
-    console.log(data);    
     let vehicleTable = [['Vehicle', 'Consumption']].concat( this.processByVehicle(data) );
     let driverTable = [['Driver', 'Consumption']].concat( this.processByDriver(data) );
     let dayTable = [['Day', 'Consumption']].concat( this.processByDay(data) );

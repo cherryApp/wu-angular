@@ -19,12 +19,12 @@ export class BaseService {
     return this.http.get(`${this.config.http.server}${query}`).toPromise();
   }
 
-  getAll(entityName: string): Observable<any> {
+  getAll(entityName: string, params: string = ''): Observable<any> {
     if (!this.entities[entityName]) {
       this.entities[entityName] = new Subject();
     }
 
-    this.http.get(`${this.config.http.server}${entityName}`)
+    this.http.get(`${this.config.http.server}${entityName}/${params}`)
       .forEach( data => this.entities[entityName].next(data) );
 
     return this.entities[entityName];

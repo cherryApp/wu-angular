@@ -15,6 +15,8 @@ import { VehicleComponent } from './page/vehicle/vehicle.component';
 import { DriverComponent } from './page/driver/driver.component';
 import { DataTableComponent } from './element/data-table/data-table.component';
 import { RowEditorComponent } from './row-editor/row-editor.component';
+import { FormControlComponent } from './element/form-control/form-control.component';
+import { InputCellComponent } from './element/input-cell/input-cell.component';
 
 const appRouting: Routes =   [
   { path: '', component: HomeComponent, data: {animation: 'HomePage'} },
@@ -33,7 +35,9 @@ const appRouting: Routes =   [
     VehicleComponent,
     DriverComponent,
     DataTableComponent,
-    RowEditorComponent
+    RowEditorComponent,
+    FormControlComponent,
+    InputCellComponent
   ],
   imports: [
     BrowserModule,

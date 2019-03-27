@@ -11,7 +11,7 @@
       "email": "jf@jf.org"
     },
     {
-      "name": "Cserkó Lídia",
+      "name": "Philip Reno",
       "email": "john.doe@gmail.com",
       "id": 3
     }
@@ -32,13 +32,21 @@
       "consumption": "9",
       "year": "2012",
       "id": 2
+    },
+    {
+      "lp": "MKL-847",
+      "manufacturer": "Mazda",
+      "engine": "diesel",
+      "consumption": "7",
+      "year": "2013",
+      "id": 3
     }
   ],
   "fuelings": [
     {
       "id": 1,
       "date": "2019-04-02",
-      "driverId": "1",
+      "driverId": "3",
       "vehicleId": "2",
       "amount": 22
     },
@@ -79,10 +87,31 @@
     },
     {
       "date": "2019-03-29",
-      "driverId": "3",
+      "driverId": "1",
       "vehicleId": "1",
       "amount": "75",
       "id": 7
+    },
+    {
+      "date": "2019-03-31",
+      "driverId": "2",
+      "vehicleId": "1",
+      "amount": "66",
+      "id": 8
+    },
+    {
+      "date": "2019-03-20",
+      "driverId": "2",
+      "vehicleId": "3",
+      "amount": "54",
+      "id": 9
+    },
+    {
+      "date": "2019-02-08",
+      "driverId": "1",
+      "vehicleId": "1",
+      "amount": "12",
+      "id": 10
     }
   ],
   "posts": [

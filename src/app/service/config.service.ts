@@ -27,8 +27,8 @@ export class ConfigService {
     fuelings: [
       {key: 'id', title: '#', type: 'plain'},
       {key: 'date', title: 'Date', type: 'date'},
-      {key: 'driverId', title: 'Driver', type: 'text'},
-      {key: 'vehicleId', title: 'Vehicle', type: 'text'},
+      {key: 'driverId', title: 'Driver', type: 'select'},
+      {key: 'vehicleId', title: 'Vehicle', type: 'select'},
       {key: 'amount', title: 'Amount', type: 'number'}
     ]
   };

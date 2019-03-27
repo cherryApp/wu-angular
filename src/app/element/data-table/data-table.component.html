@@ -10,37 +10,29 @@
   <tbody>
     <!-- Row for creating new data. -->
     <tr class="new-item-row">
-        <td *ngFor="let col of cols">
-          <span *ngIf="col.type == 'plain'">
-            {{ newRow[col.key] }}
-          </span>
-          <input 
-            *ngIf="col.type != 'plain'" 
-            [(ngModel)]="newRow[col.key]" 
-            [type]="col.type" 
-            class="form-control">
-        </td>
-        <td>
-          <div class="btn-group">
-            <button class="btn btn-success" (click)="createRow(newRow)">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-          </div>
-        </td>
+      <td *ngFor="let col of cols">
+        <app-input-cell           
+          [col]="col" 
+          [row]="newRow">
+        </app-input-cell>
+      </td>
+      <td>
+        <div class="btn-group">
+          <button class="btn btn-success" (click)="createRow(newRow)">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
+        </div>
+      </td>
     </tr>
 
     <!-- Rows for showing data. -->
     <tr *ngFor="let row of rows">
-      <td *ngFor="let col of cols">
-        <span *ngIf="col.type == 'plain'">
-          {{ row[col.key] }}
-        </span>
-        <input 
-          *ngIf="col.type != 'plain'" 
-          [(ngModel)]="row[col.key]" 
-          [type]="col.type" 
-          class="form-control">
-      </td>
+        <td *ngFor="let col of cols">
+            <app-input-cell           
+              [col]="col" 
+              [row]="row">
+            </app-input-cell>
+          </td>
       <td>
         <div class="btn-group">
           <button class="btn btn-info" (click)="updateRow(row)">
