@@ -55,7 +55,7 @@ export class FuelingComponent extends Base implements OnInit, OnDestroy {
     );
 
     this.listSubscription = this.baseService.getAll(
-      this.entityName, 
+      this.entityName,
       '?_sort=date&_order=asc'
       )
       .subscribe(
@@ -70,7 +70,7 @@ export class FuelingComponent extends Base implements OnInit, OnDestroy {
   }
   
   setColumns() {
-    let cols = this.config.columns[this.entityName];
+    let cols = this.config.columns['fuelings'];
 
     for (var k in cols) {
       if (cols[k].key == 'driverId') {

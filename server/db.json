@@ -14,6 +14,11 @@
       "name": "Philip Reno",
       "email": "john.doe@gmail.com",
       "id": 3
+    },
+    {
+      "name": "Enzo Ferrari",
+      "email": "enzo@gmail.com",
+      "id": 4
     }
   ],
   "vehicles": [
@@ -53,7 +58,7 @@
     {
       "date": "2019-03-01",
       "driverId": 1,
-      "vehicleId": "1",
+      "vehicleId": "3",
       "amount": 20,
       "id": 2
     },
@@ -67,7 +72,7 @@
     {
       "date": "2019-03-19",
       "driverId": "2",
-      "vehicleId": "2",
+      "vehicleId": "1",
       "amount": "40",
       "id": 4
     },
@@ -107,8 +112,8 @@
       "id": 9
     },
     {
-      "date": "2019-02-08",
-      "driverId": "1",
+      "date": "2019-04-26",
+      "driverId": "4",
       "vehicleId": "1",
       "amount": "12",
       "id": 10

@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit, OnDestroy{
   public dataSubscription: Subscription;
 
   constructor(private baseService: BaseService) {
-    this.baseService.customQuery('fuelings?_expand=vehicle&_expand=driver')
+    let query = 'fuelings?_expand=vehicle&_expand=driver&_sort=date&_order=asc';
+    this.baseService.customQuery(query)
       .then(
         data => this.initChart(data),
         err => console.error(err)
@@ -41,85 +42,47 @@ export class HomeComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {}
 
-  processByVehicle(data: any[]): any[] {
-    // Collect data by vehicle.
-    let byVehicle: any = {};
+  processByType(data: any[], getKey: Function, getValue: Function): any[] {
+    let processed: any = {};
     let table: any[] = [];
     for (let row of data) {
-      if (!byVehicle[row.vehicle.lp]) {
-        byVehicle[row.vehicle.lp] = 0;
+      if (!processed[getKey(row)]) {
+        processed[getKey(row)] = 0;
       }
-      byVehicle[row.vehicle.lp] += parseInt(row.amount);
+      processed[getKey(row)] += parseInt(getValue(row));
     }
 
     // Fill table.
-    for (let k in byVehicle) {
-      table.push([k, byVehicle[k]]);
-    }
-
-    return table;
-  }
-  
-  processByDriver(data: any[]): any[] {
-    // Collect data by driver.
-    let byDriver: any = {};
-    let table: any[] = [];
-    for (let row of data) {
-      if (!byDriver[row.driver.name]) {
-        byDriver[row.driver.name] = 0;
-      }
-      byDriver[row.driver.name] += parseInt(row.amount);
-    }
-
-    // Fill table.
-    for (let k in byDriver) {
-      table.push([k, byDriver[k]]);
-    }
-
-    return table;
-  }
-  
-  processByDay(data: any[]): any[] {
-    // Collect data by driver.
-    let byData: any = {};
-    let table: any[] = [];
-    for (let row of data) {
-      if (!byData[row.date]) {
-        byData[row.date] = 0;
-      }
-      byData[row.date] += parseInt(row.amount);
-    }
-
-    // Fill table.
-    for (let k in byData) {
-      table.push([k, byData[k]]);
+    for (let k in processed) {
+      table.push([k, processed[k]]);
     }
 
     return table;
   }
 
   initChart(data: any[]): void {
-    let vehicleTable = [['Vehicle', 'Consumption']].concat( this.processByVehicle(data) );
-    let driverTable = [['Driver', 'Consumption']].concat( this.processByDriver(data) );
-    let dayTable = [['Day', 'Consumption']].concat( this.processByDay(data) );
-
     this.vehicleChart = {
       chartType: this.chartType,
-      dataTable: vehicleTable,
+      dataTable: [['Vehicle', 'Consumption']].concat( 
+        this.processByType(data, row => row.vehicle.lp, row => row.amount) 
+      ),
       options: this.pieOptions
     };
     
     this.driverChart = {
       chartType: this.chartType,
-      dataTable: driverTable,
+      dataTable: [['Driver', 'Consumption']].concat(
+        this.processByType(data, row => row.driver.name, row => row.amount) 
+      ),
       options: this.pieOptions
     };
     
     this.dayChart = {
       chartType: 'ColumnChart',
-      dataTable: dayTable,
+      dataTable: [['Day', 'Consumption']].concat(
+        this.processByType(data, row => row.date, row => row.amount) 
+      ),
       options: this.columnOptions
     };
   }
-
 }
